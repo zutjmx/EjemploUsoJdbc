@@ -5,10 +5,11 @@ import org.zutjmx.java.jdbc.repositorio.ProductoRepositorioImpl;
 import org.zutjmx.java.jdbc.repositorio.Repositorio;
 import org.zutjmx.java.jdbc.util.ConexionBD;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Date;
 
-public class EjemploJdbc {
+public class EjemploJdbcUpdate {
     public static void main(String[] args) {
 
         try(Connection connection = ConexionBD.getConnection()) {
@@ -21,14 +22,14 @@ public class EjemploJdbc {
             System.out.println(":::: Se prueba el método porId() ::::");
             System.out.println(repositorio.porId(2L));
 
-            System.out.println(":::: Se prueba el método guardar() ::::");
+            System.out.println(":::: Se prueba el método guardar() con update ::::");
             Producto nuevoProducto = new Producto();
-            nuevoProducto.setNombre("Huawei Y9a");
-            nuevoProducto.setPrecio(6000);
-            nuevoProducto.setFechaCreacion(new Date());
+            nuevoProducto.setId(6L);
+            nuevoProducto.setNombre("Huawei Y9A Edición Especial");
+            nuevoProducto.setPrecio(8000);
             repositorio.guardar(nuevoProducto);
 
-            System.out.println(":::: Producto guardado ::::");
+            System.out.println(":::: Producto actualizado ::::");
 
             System.out.println(":::: Lista de productos ::::");
             repositorio.listar().forEach(System.out::println);

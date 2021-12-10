@@ -5,10 +5,10 @@ import org.zutjmx.java.jdbc.repositorio.ProductoRepositorioImpl;
 import org.zutjmx.java.jdbc.repositorio.Repositorio;
 import org.zutjmx.java.jdbc.util.ConexionBD;
 
-import java.sql.*;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-public class EjemploJdbc {
+public class EjemploJdbcDelete {
     public static void main(String[] args) {
 
         try(Connection connection = ConexionBD.getConnection()) {
@@ -21,14 +21,10 @@ public class EjemploJdbc {
             System.out.println(":::: Se prueba el método porId() ::::");
             System.out.println(repositorio.porId(2L));
 
-            System.out.println(":::: Se prueba el método guardar() ::::");
-            Producto nuevoProducto = new Producto();
-            nuevoProducto.setNombre("Huawei Y9a");
-            nuevoProducto.setPrecio(6000);
-            nuevoProducto.setFechaCreacion(new Date());
-            repositorio.guardar(nuevoProducto);
+            System.out.println(":::: Se prueba el método eliminar() ::::");
+            repositorio.eliminar(6L);
 
-            System.out.println(":::: Producto guardado ::::");
+            System.out.println(":::: Producto eliminado ::::");
 
             System.out.println(":::: Lista de productos ::::");
             repositorio.listar().forEach(System.out::println);

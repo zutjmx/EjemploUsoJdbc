@@ -7,6 +7,7 @@ public class Producto {
     private String nombre;
     private Integer precio;
     private Date fechaCreacion;
+    private Categoria categoria;
 
     @Override
     public String toString() {
@@ -15,6 +16,7 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", fechaCreacion=" + fechaCreacion +
+                ", categoria=" + categoria +
                 '}';
     }
 
@@ -58,5 +60,13 @@ public class Producto {
 
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }
