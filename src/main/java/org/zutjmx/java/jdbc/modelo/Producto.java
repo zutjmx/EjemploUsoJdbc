@@ -16,7 +16,7 @@ public class Producto {
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", fechaCreacion=" + fechaCreacion +
-                ", categoria=" + categoria +
+                ", categoria=(" + categoria.getId() + " - " + categoria.getNombre() + ")" +
                 '}';
     }
 
