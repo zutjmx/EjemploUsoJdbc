@@ -12,7 +12,7 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     private static String consultaSqlTodos = "SELECT p.*, c.nombre AS nombre_categoria FROM productos AS p INNER JOIN categorias AS c ON (p.categoria_id = c.id)";
     private static String consultaSqlById = consultaSqlTodos.concat(" WHERE p.id = ?");
     private static String insertaSql = "insert into productos (nombre, precio, categoria_id, fecha_registro) values(?,?,?,?)";
-    private static String actualizaSql = "update productos set nombre = ?, precio = ? categoria_id = ? where id = ?";
+    private static String actualizaSql = "update productos set nombre = ?, precio = ?, categoria_id = ? where id = ?";
     private static String borrarSlq = "delete from productos where id = ?";
 
     private Connection getConexion() throws SQLException {

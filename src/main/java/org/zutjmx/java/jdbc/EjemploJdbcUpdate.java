@@ -1,5 +1,6 @@
 package org.zutjmx.java.jdbc;
 
+import org.zutjmx.java.jdbc.modelo.Categoria;
 import org.zutjmx.java.jdbc.modelo.Producto;
 import org.zutjmx.java.jdbc.repositorio.ProductoRepositorioImpl;
 import org.zutjmx.java.jdbc.repositorio.Repositorio;
@@ -24,9 +25,14 @@ public class EjemploJdbcUpdate {
 
             System.out.println(":::: Se prueba el método guardar() con update ::::");
             Producto nuevoProducto = new Producto();
-            nuevoProducto.setId(6L);
-            nuevoProducto.setNombre("Huawei Y9A Edición Especial");
-            nuevoProducto.setPrecio(8000);
+            nuevoProducto.setId(12L);
+            nuevoProducto.setNombre("Refrigerador Importado");
+            nuevoProducto.setPrecio(13500);
+
+            Categoria categoria = new Categoria();
+            categoria.setId(4L);
+            nuevoProducto.setCategoria(categoria);
+
             repositorio.guardar(nuevoProducto);
 
             System.out.println(":::: Producto actualizado ::::");

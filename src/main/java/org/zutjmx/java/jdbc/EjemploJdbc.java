@@ -27,8 +27,8 @@ public class EjemploJdbc {
             categoria.setId(4L);
             categoria.setNombre("Línea Blanca");
             Producto nuevoProducto = new Producto();
-            nuevoProducto.setNombre("Refrigerador con IOT");
-            nuevoProducto.setPrecio(12000);
+            nuevoProducto.setNombre("Horno de Microondas Hamilton Beach");
+            nuevoProducto.setPrecio(2500);
             nuevoProducto.setFechaCreacion(new Date());
             nuevoProducto.setCategoria(categoria);
             repositorio.guardar(nuevoProducto);
